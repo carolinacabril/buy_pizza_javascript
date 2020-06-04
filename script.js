@@ -105,8 +105,19 @@ document.querySelector('.pizzaInfo--addButton').addEventListener('click',()=>{
   closeModal()
 })
 
+document.querySelector('.menu-openner').addEventListener('click',()=>{
+  if(cart.length > 0){
+    document.querySelector('aside').style.left = '0'
+  }
+})
+
+document.querySelector('.menu-closer').addEventListener('click',()=>{
+    document.querySelector('aside').style.left = '100vw'
+})
+
 //carrinho
 function updateCart() {
+  document.querySelector('.menu-openner span').innerHTML = cart.length
   if(cart.length > 0){
     document.querySelector('aside').classList.add('show')
     document.querySelector('.cart').innerHTML = ''
@@ -164,6 +175,7 @@ function updateCart() {
 
   }else{
     document.querySelector('aside').classList.remove('show')
+    document.querySelector('aside').style.left = '100vw'
   }
 }
 
